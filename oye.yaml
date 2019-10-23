@@ -14,7 +14,7 @@ parameters:
 - description: Git source URI for Jenkins S2I
   name: SOURCE_REPOSITORY_URL
   required: true
-  value: https://github.com/oye-admin/devsecops2.git
+  value: https://github.com/siamaksade/jenkins-s2i-example.git
 - description: Git branch/tag reference
   name: SOURCE_REPOSITORY_REF
   value: master
@@ -29,7 +29,7 @@ parameters:
   displayName: Jenkins Password
   generate: expression
   name: JENKINS_PASSWORD
-  value: T@pT3ch!
+  value: password
 - description: Volume space available for data, e.g. 512Mi, 2Gi.
   displayName: Volume Capacity
   name: VOLUME_CAPACITY
@@ -110,6 +110,7 @@ objects:
   status:
     lastVersion: 0
 - apiVersion: v1
+  kind: DeploymentConfig
   metadata:
     labels:
       app: jenkins
